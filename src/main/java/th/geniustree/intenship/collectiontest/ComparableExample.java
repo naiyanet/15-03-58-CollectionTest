@@ -45,6 +45,7 @@ class Student implements Comparable{
     public double GPA() {
         return GPA; 
     }
+    @Override
     public int compareTo(Object o) {
         double f = GPA-((Student)o).GPA;
         if (f == 0.0){
@@ -58,4 +59,5 @@ class Student implements Comparable{
         }
             
     }
+    
 }
