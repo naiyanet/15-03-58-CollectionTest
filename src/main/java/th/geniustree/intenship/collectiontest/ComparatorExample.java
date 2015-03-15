@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package th.geniustree.intenship.collectiontest;
 
 import java.util.Comparator;
 import java.util.TreeSet;
 import java.util.*;
-/**
- *
- * @author User
- */
+
 public class ComparatorExample {
 
     public static void main(String[] args) {
@@ -29,12 +22,13 @@ public class ComparatorExample {
         }
 
     }
+}
 
     class NameComp implements Comparator {
 
         @Override
         public int compare(Object o1, Object o2) {
-            return (((Students) o1).firstName.compareTo(((Students) o2).firstName));
+            return (((Students) o1).firstName().compareTo(((Students) o2).firstName()));
         }
     }
 
@@ -42,10 +36,10 @@ public class ComparatorExample {
 
         @Override
         public int compare(Object o1, Object o2) {
-            if (((Students) o1).GPA == ((Students) o2).GPA) {
+            if (((Students) o1).GPA() == ((Students) o2).GPA()) {
                 return 0;
             } else {
-                if (((Students) o1).GPA < ((Students) o2).GPA) {
+                if (((Students) o1).GPA() < ((Students) o2).GPA()) {
                     return -1;
                 } else {
                     return 1;
@@ -56,9 +50,9 @@ public class ComparatorExample {
 
     class Students {
 
-        private String firstName, lastName;
-        private int studentID = 0;
-        private double GPA = 0.0;
+        String firstName, lastName;
+        int studentID = 0;
+        double GPA = 0.0;
 
         public Students(String firstName, String lastName, int StudentID, double GPA) {
             if (firstName == null || lastName == null || StudentID == 0 || GPA == 0.0) {
